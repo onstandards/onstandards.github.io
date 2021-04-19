@@ -8,6 +8,5 @@ categories: IoT Edge
 We need to re-configure a Raspberry PI kernel because the required items item `CONFIG_BRIDGE_VLAN_FILTERING` is missing. 
 
 
-
-[Original: Building Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources
-[Original: Configuring Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/configuring.md
+[Building Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources
+[Configuring Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/configuring.md
