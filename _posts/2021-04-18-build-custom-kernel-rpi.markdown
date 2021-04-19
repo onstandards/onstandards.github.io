@@ -6,10 +6,12 @@ categories: IoT Edge
 ---
 
 We need to re-configure a Raspberry PI kernel because `CONFIG_BRIDGE_VLAN_FILTERING` configuration is missing. 
-It is required to support `Movy`
+It is required to support `Moby`
 
 
-## References
+References
+==========
+
 [Configuring]
 [Building]
 
