@@ -12,8 +12,5 @@ It is required to support `Moby`
 References
 ==========
 
-[Configuring]
-[Building]
-
-[Building]: https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources
-[Configuring]: https://www.raspberrypi.org/documentation/linux/kernel/configuring.md
+[Building](https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources)
+[Configuring](https://www.raspberrypi.org/documentation/linux/kernel/configuring.md)
