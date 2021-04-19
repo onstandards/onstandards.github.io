@@ -5,10 +5,9 @@ date: 2021-04-18 11:17:00 -0000
 categories: IoT Edge
 ---
 
-Today, I re-configured and built custom Raspberry PI kernel. 
+We need to re-configure a Raspberry PI kernel because the required items item `CONFIG_BRIDGE_VLAN_FILTERING` is missing. 
 
-It was needed to enable `CONFIG_BRIDGE_VLAN_FILTERING` feature, to run Moby container.
 
-[Guide]
 
-[Guide]: https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources
+[Original: Building Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/building.md#choosing_sources
+[Original: Configuring Kernel]: https://www.raspberrypi.org/documentation/linux/kernel/configuring.md
