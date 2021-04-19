@@ -83,14 +83,6 @@ Or, if you want to install a specific version of IoT Edge and the identity servi
 sudo apt-get install aziot-edge=1.2* aziot-identity-service=1.2*
 {% endhighlight %}
 
-
-
-
-***
-
-
-
-
 # Provision the device with its cloud identity
 
 Authenticate with symmetric keys
