@@ -103,7 +103,7 @@ sudo nano /etc/aziot/config.toml
 
 Find the Provisioning section of the file and uncomment the manual provisioning with connection string lines.
 
-{% highlight %}
+{% highlight bash %}
 # Manual provisioning with connection string
 [provisioning]
 source = "manual"
