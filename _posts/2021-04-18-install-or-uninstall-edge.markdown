@@ -83,6 +83,100 @@ Or, if you want to install a specific version of IoT Edge and the identity servi
 sudo apt-get install aziot-edge=1.2* aziot-identity-service=1.2*
 {% endhighlight %}
 
+Provision the device with its cloud identity
+============================================
+
+Authenticate with symmetric keys
+------------------------------------------
+
+Create the configuration file for your device based on a template file that is provided as part of the IoT Edge installation.
+
+{% highlight bash %}
+sudo cp /etc/aziot/config.toml.edge.template /etc/aziot/config.toml
+{% endhighlight %}
+
+On the IoT Edge device, open the configuration file.
+
+{% highlight bash %}
+sudo nano /etc/aziot/config.toml
+{% endhighlight %}
+
+Find the Provisioning section of the file and uncomment the manual provisioning with connection string lines.
+
+{% highlight %}
+# Manual provisioning with connection string
+[provisioning]
+source = "manual"
+connection_string = "<ADD DEVICE CONNECTION STRING HERE>"
+{% endhighlight %}
+
+After entering the provisioning information in the configuration file, apply your changes:
+{% highlight bash %}
+sudo iotedge config apply
+{% endhighlight %}
+
+Verify successful configuration
+===============================
+
+Verify that the runtime was successfully installed and configured on your IoT Edge device.
+
+Check to see that the IoT Edge system service is running.
+
+{% highlight bash %}
+sudo iotedge system status
+{% endhighlight %}
+
+A successful status response is Ok.
+
+If you need to troubleshoot the service, retrieve the service logs.
+
+{% highlight bash %}
+sudo iotedge system logs
+{% endhighlight %}
+
+Use the check tool to verify configuration and connection status of the device.
+
+{% highlight bash %}
+sudo iotedge check
+{% endhighlight %}
+
+View all the modules running on your IoT Edge device. When the service starts for the first time, you should only see the edgeAgent module running. The edgeAgent module runs by default and helps to install and start any additional modules that you deploy to your device.
+
+{% highlight bash %}
+sudo iotedge list
+{% endhighlight %}
+
+Uninstall IoT Edge
+==================
+
+If you want to remove the IoT Edge installation from your device, use the following commands.
+
+Remove the IoT Edge runtime.
+
+{% highlight bash %}
+sudo apt-get remove aziot-edge
+{% endhighlight %}
+
+Use the --purge flag if you want to delete all the files associated with IoT Edge, including your configuration files. Leave this flag out if you want to reinstall IoT Edge and use the same configuration information in the future.
+
+When the IoT Edge runtime is removed, any containers that it created are stopped but still exist on your device. View all containers to see which ones remain.
+
+{% highlight bash %}
+sudo docker ps -a
+{% endhighlight %}
+
+Delete the containers from your device, including the two runtime containers.
+
+{% highlight bash %}
+sudo docker rm -f <container name>
+{% endhighlight %}
+
+Finally, remove the container runtime from your device.
+
+{% highlight bash %}
+sudo apt-get remove --purge moby-cli
+sudo apt-get remove --purge moby-engine
+{% endhighlight %}
 
 [Original]
 
