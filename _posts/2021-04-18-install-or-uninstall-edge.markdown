@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Install or uninstall Azure IoT Edge for Raspberry PI"
+title: "Install or uninstall Azure IoT Edge"
 date: 2021-04-18 11:37:00 -0000
 categories: IoT Edge
 ---
