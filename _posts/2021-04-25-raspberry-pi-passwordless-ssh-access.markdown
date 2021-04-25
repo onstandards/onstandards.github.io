@@ -7,11 +7,11 @@ categories: Raspberry PI
 
 
 Passwordless SSH access
-=======================
+-----------------------
 It is possible to configure your Raspberry Pi to allow access from another computer without needing to provide a password each time you connect. To do this, you need to use an SSH key instead of a password. To generate an SSH key:
 
 Check for existing SSH keys
----------------------------
+===========================
 First, check whether there are already keys on the computer you are using to connect to the Raspberry Pi:
 
 {% highlight bash %}
@@ -21,7 +21,7 @@ ls ~/.ssh
 If you see files named `id_rsa.pub` or `id_dsa.pub` then you have keys set up already, so you can skip the 'Generate new SSH keys' step below.
 
 Generate new SSH keys
----------------------
+======================
 
 To generate new SSH keys enter the following command:
 
@@ -59,7 +59,8 @@ ssh-rsa <REALLY LONG STRING OF RANDOM CHARACTERS> user@host
 {% endhighlight %}
 
 Copy your public key to your Raspberry Pi
------------------------------------------
+===========================
+
 
 Using the computer which you will be connecting from, append the public key to your `authorized_keys` file on the Raspberry Pi by sending it over SSH:
 
@@ -84,7 +85,8 @@ If this does not work, you can get assistance on the [Raspberry Pi forums].
 Note: you can also send files over SSH using the `scp` command (secure copy). See the [SCP guide] for more information.
 
 Adjust permissions for your home and .ssh directories
------------------------------------------------------
+=====================================================
+
 
 If you can't establish a connection after following the steps above there might be a problem with your directory permissions. First, you want to check the logs for any errors:
 
@@ -106,7 +108,8 @@ chmod 600 $HOME/.ssh/authorized_keys
 Now only the user itself has access to `.ssh` and `.ssh/authorized_keys` in which the public keys of your remote machines are stored.
 
 Store the passphrase in the macOS keychain
-------------------------------------------
+==========================================
+
 
 If you are using macOS, and after verifying that your new key allows you to connect, you have the option of storing the passphrase for your key in the macOS keychain. This allows you to connect to your Raspberry Pi without entering the passphrase.
 
