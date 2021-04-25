@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configuring Raspberry Pi"
+title: "Raspberry PI: Install Firewall"
 date: 2021-04-24 2:25:00 -0000
 categories: Raspberry PI
 ---
