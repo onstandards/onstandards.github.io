@@ -1,25 +1,9 @@
 ---
 layout: post
-title: "Create demo certificates to test IoT Edge device features"
-date: 2021-04-26 12:31:00 -0000
-categories: IoTEdge, Certifiactes
+title: "Raspberry PI: Passwordless SSH access"
+date: 2021-04-24 2:47:00 -0000
+categories: Raspberry PI
 ---
-
-
-IoT Edge devices require certificates for secure communication between the runtime, the modules, and any downstream devices. If you don't have a certificate authority to create the required certificates, you can use demo certificates to try out IoT Edge features in your test environment. This article describes the functionality of the certificate generation scripts that IoT Edge provides for testing.
-
-These certificates expire in 30 days, and should not be used in any production scenario.
-
-You can create certificates on any machine, and then copy them over to your IoT Edge device. It's easier to use your primary machine to create the certificates rather than generating them on your IoT Edge device itself. By using your primary machine, you can set up the scripts once and then use them to create certificates for multiple devices.
-
-Follow these steps to create demo certificates for testing your IoT Edge scenario:
-
-Set up scripts for certificate generation on your device.
-Create the root CA certificate that you use to sign all the other certificates for your scenario.
-Generate the certificates you need for the scenario you want to test:
-Create IoT Edge device identity certificates for provisioning devices with X.509 certificate authentication, either manually or with the IoT Hub Device Provisioning Service.
-Create IoT Edge device CA certificates for IoT Edge devices in gateway scenarios.
-Create downstream device certificates for authenticating downstream devices in a gateway scenario.
 
 
 It is possible to configure your Raspberry Pi to allow access from another computer without needing to provide a password each time you connect. To do this, you need to use an SSH key instead of a password. To generate an SSH key:
